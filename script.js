@@ -7,16 +7,19 @@ jQuery(document).ready(function($){
         let fname = $("#name").val();
         let email =  $("#email").val();
         let mpassword = $("#current-password").val();
+        let checkbox = $("#checkbox");
         
         // Error message elements
         let nameerror = $("#name-error");
         let emailerror = $("#email-error");
         let passworderror = $("#password-error");
+        let checkerror = $("#check-error");
         
         // Clear previous error messages
         nameerror.text('');
         emailerror.text('');
         passworderror.text('');
+        checkerror.text('');
         
         // Clear error message when the user starts typing
         $("#name").on('input', function() {
@@ -28,6 +31,9 @@ jQuery(document).ready(function($){
         $("#current-password").on('input', function() {
             passworderror.text('');
         });
+        $("#checkbox").on('change', function() {
+            checkerror.text('');
+        });
         
         // Validate inputs
         if(fname === '') {
@@ -38,10 +44,13 @@ jQuery(document).ready(function($){
         }
         if(mpassword === '') {
             passworderror.text('Password is required').css('color', 'red');
+        } 
+        if(!checkbox.is(':checked')) { // Check if checkbox is not checked
+            checkerror.text('You must agree to the terms and conditions').css('color', 'red');
         }
         
         // Prevent form submission if there are errors
-        if (nameerror.text() !== '' || emailerror.text() !== '' || passworderror.text() !== '') {
+        if (nameerror.text() !== '' || emailerror.text() !== '' || passworderror.text() !== '' || checkerror.text() !== '') {
             return false;
         }
     

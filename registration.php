@@ -12,24 +12,26 @@
         <h1>CREATE ACCOUNT</h1>
         <form action="" method="POST" >
             <div class="input">
-                <input type="text" placeholder="Your name" name="name" id="name" required>
+                <input type="text" placeholder="Your name" name="name" id="name">
                 <span id="name-error" class="error-message"></span>
 
-                <input type="email" placeholder="Enter email" name="email" id="email" required>
+                <input type="email" placeholder="Enter email" name="email" id="email">
                 <span id="email-error" class="error-message"></span>
 
-                <input type="Password" placeholder="Enter Password" name="password" id="current-password" required>
+                <input type="Password" placeholder="Enter Password" name="password" id="current-password">
                 <span id="password-error" class="error-message"></span>
             </div>
             <div class="radiobtn">
-                <input type="radio" required> 
+                <input type="checkbox" id = "checkbox"> 
                 <label>I agree with all the statements in <u>Terms of service</u></label>
+                <span id="check-error" class="error-message"></span>
             </div>
             <div class="btn">
                 <input type="submit" value="Sign Up" class="submit" id="signup">
             </div>
             <div class="login">
                 <p>Already have an account? <a href="http://localhost/task/login.php">Login here</a></p>
+
                 <p id="response"></p>
             </div>
         </form>
