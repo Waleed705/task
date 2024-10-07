@@ -1,5 +1,5 @@
 <?php
-
+include 'config.php';
 class Database {
     private $servername = "localhost";
     private $username = "root";
@@ -46,7 +46,6 @@ class Database {
         } else {
             $name = $data['name'];
         }
-
         // Validate email
         if (empty($data['email'])) {
             $error_message[] = "Email is required";
@@ -86,7 +85,7 @@ class Database {
         $stmt->bind_param("sss", $name, $email, $hashed_password);
 
         if ($stmt->execute()) {
-            $response = array('status' => 'success', 'url' => 'http://localhost/task/login.php');
+            $response = array('status' => 'success', 'url' => HOME_URL . '/template/login.php');
             echo json_encode($response);
             die();
         } else {

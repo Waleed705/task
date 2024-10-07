@@ -1,10 +1,15 @@
+
+<?php
+include 'config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="<?php echo HOME_URL ?>/style/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -30,12 +35,12 @@
                 <input type="submit" value="Sign Up" class="submit" id="signup">
             </div>
             <div class="login">
-                <p>Already have an account? <a href="http://localhost/task/login.php">Login here</a></p>
+                <p>Already have an account? <a href="<?php echo HOME_URL ?>/template/login.php">Login here</a></p>
 
                 <p id="response"></p>
             </div>
         </form>
     </div>
-    <script src="script.js"></script>
+    <script src="<?php echo HOME_URL ?>/script/script.js"></script>
 </body>
 </html>

@@ -85,6 +85,7 @@ jQuery(document).ready(function($){
         let emailerror = $("#email-error");
         let passworderror = $("#password-error");
         let email = $("#email").val();
+        let db_path = $(".db_path").val();
         let mpassword = $("#current-password").val();
 
         emailerror.text('');
@@ -108,7 +109,7 @@ jQuery(document).ready(function($){
             'form' : 'login'
             };
             $.ajax({
-                url: 'db.php',
+                url: db_path,
                 type: 'POST',
                 data : formData,
                 success: function(response){
@@ -125,7 +126,7 @@ jQuery(document).ready(function($){
     })
     $("#signup2").click(function(e){
         e.preventDefault();
-        window.location.href = "http://localhost/task/registration.php"
+        window.location.href = "http://localhost/task/index.php"
         
     });
 });
